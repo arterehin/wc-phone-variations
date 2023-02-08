@@ -25,7 +25,7 @@ jQuery(function ($) {
     $cancelButton.prop('disabled', false);
   }
 
-  function disabel_controls() {
+  function disable_controls() {
     $saveButton.prop('disabled', true);
     $cancelButton.prop('disabled', true);
   }
@@ -46,7 +46,7 @@ jQuery(function ($) {
       .then(function () {
         $uploader.trigger('commit');
         toggle_notice();
-        disabel_controls();
+        disable_controls();
       }).always(function () {
         $container.unblock();
       });
@@ -54,7 +54,7 @@ jQuery(function ($) {
 
   function rollback_values() {
     $uploader.trigger('reset');
-    disabel_controls();
+    disable_controls();
   }
 
   // attach form handlers

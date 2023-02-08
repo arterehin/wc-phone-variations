@@ -5,7 +5,7 @@ if (!defined('ABSPATH')) {
 }
 
 /**
- * SP_Image_Generator Class.
+ * SP_Ajax Class.
  */
 class SP_Ajax {
 
