@@ -1,0 +1,60 @@
+#sp_media {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+#sp_media .sp_image {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border: 2px dashed #dad9d9;
+  border-radius: 4px;
+}
+
+#sp_media .sp_image:not(.filled) {
+  cursor: pointer;
+}
+
+#sp_media .sp_image:not(.filled)::before {
+  content: '\f104';
+  font-family: Dashicons;
+  font-size: 35px;
+  font-weight: 400;
+  font-variant: normal;
+  color: #c7c7c7;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+#sp_media .sp_image:not(.filled):hover {
+  background-color: #f9f9f9;
+}
+
+#sp_media .sp_image.filled {
+  border-style: solid;
+}
+
+#sp_media .sp_image img {
+  max-width: 100%;
+}
+
+#sp_media .sp_image_remove {
+  display: none;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+  background: rgba(0, 0, 0, .5);
+}
+
+#sp_media .filled .sp_image_remove {
+  display: block;
+}
