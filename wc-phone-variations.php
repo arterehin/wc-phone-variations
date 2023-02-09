@@ -44,7 +44,7 @@ class SP_Phone_Variations_Plugin {
   private function init_hooks() {
     register_activation_hook(__FILE__, array($this, 'install'));
     add_action('admin_enqueue_scripts', array($this, 'admin_static'));
-    add_action($this->attribute_name . '_edit_form_fields', array($this, 'add_taxanomy_field'));
+    add_action($this->attribute_name . '_edit_form_fields', array($this, 'add_taxanomy_term_field'));
     add_action('edited_' . $this->attribute_name, array($this, 'process_attribute'));
     add_filter('woocommerce_product_data_tabs', array($this, 'add_phone_tab'));
     add_action('woocommerce_product_data_panels', array($this, 'add_phone_tab_panel'));
@@ -253,9 +253,9 @@ class SP_Phone_Variations_Plugin {
   }
 
   /**
-   * Add image uploader field to phone taxanomy
+   * Add image uploader field to phone taxanomy term
    */
-  public function add_taxanomy_field($taxanomy) {
+  public function add_taxanomy_term_field($taxanomy) {
     include_once dirname(__FILE__) . '/admin/views/html-phone-cover-image.php';
   }
 
